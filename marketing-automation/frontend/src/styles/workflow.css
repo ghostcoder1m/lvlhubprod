@@ -1,0 +1,101 @@
+/* Workflow Builder Styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Node styles */
+.react-flow__node {
+  @apply select-none;
+}
+
+/* Handle styles */
+.react-flow__handle {
+  width: 12px !important;
+  height: 12px !important;
+  background: #3b82f6 !important;
+  border: 2px solid white !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5) !important;
+  opacity: 1 !important;
+  transition: transform 0.2s !important;
+  transform: translateX(-50%) !important;
+}
+
+.react-flow__handle:hover {
+  transform: translateX(-50%) scale(1.3) !important;
+  background: #10b981 !important;
+}
+
+.react-flow__handle-connecting {
+  background: #eab308 !important;
+  transform: translateX(-50%) scale(1.3) !important;
+}
+
+.react-flow__handle-valid {
+  background: #10b981 !important;
+}
+
+/* Connection line styles */
+.react-flow__edge-path {
+  stroke-width: 3 !important;
+  stroke: #3b82f6 !important;
+}
+
+.react-flow__connection-path {
+  stroke: #3b82f6 !important;
+  stroke-width: 3 !important;
+  stroke-dasharray: 5 !important;
+  animation: flowConnection 1s infinite linear !important;
+}
+
+@keyframes flowConnection {
+  from {
+    stroke-dashoffset: 10;
+  }
+}
+
+/* Handle positions */
+.react-flow__handle-top {
+  top: -6px !important;
+}
+
+.react-flow__handle-bottom {
+  bottom: -6px !important;
+}
+
+/* Edge styles */
+.react-flow__edge {
+  pointer-events: all;
+}
+
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: #2563eb !important;
+  stroke-width: 4 !important;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #2563eb !important;
+  stroke-width: 4 !important;
+}
+
+/* Controls and minimap */
+.react-flow__controls {
+  @apply !bg-white !shadow-lg !rounded-lg !border !border-gray-200;
+}
+
+.react-flow__controls-button {
+  @apply !border-gray-200 !w-8 !h-8 hover:!bg-gray-50;
+}
+
+.react-flow__minimap {
+  @apply !bg-white !shadow-lg !rounded-lg !border !border-gray-200;
+}
+
+/* Connection validation */
+.react-flow__node.connectable {
+  @apply ring-2 ring-blue-300 ring-offset-2;
+}
+
+/* Hide attribution */
+.react-flow__attribution {
+  display: none !important;
+} 
